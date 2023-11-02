@@ -1,0 +1,16 @@
+import requests
+url = "https://example.com"  # 替换为您要抓取的网页的URL
+# 发送GET请求获取网页内容
+response = requests.get(url)
+# 检查响应状态码
+if response.status_code == 200:
+    # 获取网页内容
+    content = response.text
+    
+    # 保存为文本文件
+    with open("web_content.txt", "w") as file:
+        file.write(content)
+        
+    print("网页内容已保存为web_content.txt文件")
+else:
+    print("无法获取网页内容")
